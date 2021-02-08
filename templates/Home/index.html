@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block all%} bg-dark text-white {% endblock %}
+
+{% block body %}
+
+<div class="container" id="books">
+    <div class="row">
+
+        {% for book in bestseller %}
+        <div class="col-md-4 py-4">
+            <div class="card ">
+                <img src="/media/{{book.thumnail }}" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p class="card-text"><b>By</b> {{ book.author }} on {{book.publish_date}}</p>
+                  <a href="/bestseller/{{book.title}}/{{book.slug}}/page=1" class="btn btn-primary">Read Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for book in education %}
+        <div class="col-md-4 py-4">
+            <div class="card ">
+                <img src="/media/{{book.thumnail }}" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p class="card-text"><b>By</b> {{ book.author }} on {{book.publish_date}}</p>
+                  <a href="/education/{{book.title}}/{{book.slug}}/page=1" class="btn btn-primary">Read Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for book in fantacy %}
+        <div class="col-md-4 py-4">
+            <div class="card ">
+                <img src="/media/{{book.thumnail }}" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p class="card-text"><b>By</b> {{ book.author }} on {{book.publish_date}}</p>
+                  <a href="/fantacy/{{book.title}}/{{book.slug}}/page=1" class="btn btn-primary">Read Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for book in art %}
+        <div class="col-md-4 py-4">
+            <div class="card ">
+                <img src="/media/{{book.thumnail }}" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p class="card-text"><b>By</b> {{ book.author }} on {{book.publish_date}}</p>
+                  <a href="/art/{{book.title}}/{{book.slug}}/page=1" class="btn btn-primary">Read Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% for book in stories %}
+        <div class="col-md-4 py-4">
+            <div class="card ">
+                <img src="/media/{{book.thumnail }}" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ book.title }}</h5>
+                  <p class="card-text"><b>By</b> {{ book.author }} on {{book.publish_date}}</p>
+                  <a href="/stories/{{book.title}}/{{book.slug}}/page=1" class="btn btn-primary">Read Now</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+     
+
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,35 @@
+{% extends 'basereadbook.html' %}
+
+{% block css %}
+<style>
+
+@media (min-width: 768px) { 
+  .container img{
+    width: auto;
+    height: 20rem;
+  }
+}   
+@media (max-width: 768px) { 
+.container img{
+    width: auto;
+    height: 10rem;
+  }
+}
+
+</style>
+{% endblock css %}
+
+{% block title %}  {{book.title}}  {% endblock title %}
+
+{% block body %} 
+
+    <div class="container text-center">
+        <h2>{{book.title}}</h2>
+        <img src="/media/{{book.thumnail}}" alt="">
+    </div>
+
+    <div class="container my-5">
+        {{book.content|safe}}
+    </div>
+    
+{% endblock body %}
