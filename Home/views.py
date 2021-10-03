@@ -28,3 +28,6 @@ def index(request):
         params[category[0]] = allbooks
         category.pop(0)
     return render(request, 'Home/index.html', params)
+
+def signup(request):
+    return render(request, 'Home/signup.html')

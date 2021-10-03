@@ -125,12 +125,45 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <button class="dropdown-item" type="button">Setting</button>
+                  <button class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Author</button>
                 </div>
               </div>
         </div>
     </nav>  
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Author Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/handlelogin/" method="POST">{% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+              </div>
+              <button type="submit" class="btn btn-success form-control">Login</button>
+              <div class="form-group text-center my-2">
+                <a class="d-block text-danger" href="">Forget Password ?</a>
+
+                <a class="text-success" href="/signup">Sign Up</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jumbotron -->
     <div class="jumbotron p-0 bg-transparent">
       <img class="w-100" id="jumbo_bg_img" src="/static/Allbooks/jumbotron.jpg" alt="" srcset="">
       <p class="lead pl-5">It's Chapterone</p>
@@ -139,6 +172,7 @@
       <a class="btn btn-primary btn-lg ml-5" href="#" role="button">Learn more</a>
     </div>
     
+    <!-- category bar -->
     <div class="container" id="categories">
       <a type="button" href="/" class="btn btn-white mx-2 border {% block all%}  {% endblock %}">All</a>
       <a type="button" href="/bestseller/" class="btn btn-white mx-2 border {% block bestseller%}  {% endblock %}">Best seller</a>
